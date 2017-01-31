@@ -25,6 +25,6 @@ RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # Install packages
-RUN Rscript -e "install.packages(c('knitr', 'bookdown', 'formatR'))"
+RUN Rscript -e "install.packages(c('mosaic', 'bookdown', 'formatR'))"
 
 CMD ["/init"]  
