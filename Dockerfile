@@ -10,6 +10,8 @@ RUN apt-get install -y --no-install-recommends imagemagick \
 	texlive-lang-japanese \
 	texlive-luatex \
 	texlive-xetex \
+	texlive-latex-recommended \
+	texlive-latex-extra \
 	texlive-fonts-recommended \
 	texlive-fonts-extra \
     && apt-get clean
