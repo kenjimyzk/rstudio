@@ -9,6 +9,7 @@ RUN apt-get install -y --no-install-recommends latexmk\
 	texlive-lang-japanese \
 	texlive-luatex \
 	texlive-xetex \
+	texlive-pictures \
 	texlive-fonts-extra \
     && apt-get clean
 
