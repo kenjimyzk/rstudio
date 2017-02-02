@@ -5,7 +5,7 @@ MAINTAINER "kenjimyzk"
 
 RUN apt-get update 
 
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends latexmk\
 	texlive-lang-japanese \
 	texlive-luatex \
 	texlive-xetex \
