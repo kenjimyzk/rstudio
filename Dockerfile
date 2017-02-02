@@ -24,7 +24,7 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # Install packages
 RUN Rscript -e "install.packages(c('bookdown', 'formatR'))"
-RUN Rscript -e "install.packages(c('Cairo', 'extrafont', 'TikZDev'))"
+RUN Rscript -e "install.packages(c('Cairo', 'extrafont', 'tikzDevice'))"
 RUN Rscript -e "extrafont::font_import()"
 
 CMD ["/init"]  
