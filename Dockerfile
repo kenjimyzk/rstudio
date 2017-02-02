@@ -5,14 +5,10 @@ MAINTAINER "kenjimyzk"
 
 RUN apt-get update 
 
-RUN apt-get install -y --no-install-recommends imagemagick \
-	lmodern \
+RUN apt-get install -y --no-install-recommends \
 	texlive-lang-japanese \
 	texlive-luatex \
 	texlive-xetex \
-	texlive-latex-recommended \
-	texlive-latex-extra \
-	texlive-fonts-recommended \
 	texlive-fonts-extra \
     && apt-get clean
 
