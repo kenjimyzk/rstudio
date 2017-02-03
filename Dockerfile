@@ -12,6 +12,7 @@ RUN apt-get install -y --no-install-recommends latexmk\
 	texlive-pictures \
 	texlive-fonts-extra \
     && apt-get clean
+ADD dot.latexmkrc /home/rstudio/.latexmkrc
 
 # Change environment to Japanese(Character and DateTime)
 ENV LANG ja_JP.UTF-8
