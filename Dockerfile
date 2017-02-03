@@ -3,8 +3,7 @@ FROM rocker/hadleyverse
 MAINTAINER "kenjimyzk" 
 
 
-RUN apt-get update 
-
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends latexmk\
 	texlive-lang-japanese \
 	texlive-luatex \
@@ -12,7 +11,6 @@ RUN apt-get install -y --no-install-recommends latexmk\
 	texlive-pictures \
 	texlive-fonts-extra \
     && apt-get clean
-ADD dot.latexmkrc /home/rstudio/.latexmkrc
 
 # Change environment to Japanese(Character and DateTime)
 ENV LANG ja_JP.UTF-8
@@ -29,4 +27,4 @@ RUN Rscript -e "install.packages(c('bookdown', 'formatR'))"
 RUN Rscript -e "install.packages(c('Cairo', 'extrafont', 'tikzDevice'))"
 RUN Rscript -e "extrafont::font_import()"
 
-CMD ["/init"]  
+CMD ["/init"]
