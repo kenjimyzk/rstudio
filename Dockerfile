@@ -27,8 +27,9 @@ RUN Rscript -e "install.packages(c('bookdown', 'formatR'))"
 RUN Rscript -e "install.packages(c('Cairo', 'extrafont', 'tikzDevice'))"
 RUN Rscript -e "extrafont::font_import()"
 
-CMD ["/init"]
-
 USER rstudio
 
 ADD dot.latexmkrc /home/rstudio/.latexmkrc
+
+CMD ["/init"]
+
