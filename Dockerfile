@@ -33,4 +33,5 @@ USER rstudio
 
 RUN Rscript -e "extrafont::font_import(prompt = FALSE)"
 
+USER root
 CMD ["/init"]
