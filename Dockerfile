@@ -1,16 +1,10 @@
-FROM rocker/hadleyverse
-
-MAINTAINER "kenjimyzk" 
-
+FROM opencpu/ubuntu-16.04
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y --no-install-recommends latexmk\
-	texlive-lang-japanese \
-	texlive-luatex \
-	texlive-xetex \
-	texlive-pictures \
-	texlive-fonts-extra \
-    && apt-get clean
+RUN  add-apt-repository -y ppa:marutter/rrutter && \
+  apt-get update && \
+  apt-get install -y texlive-full latexmk evince aspell aspell-en && \
+  apt-get clean
 
 # Change environment to Japanese(Character and DateTime)
 ENV LANG ja_JP.UTF-8
@@ -22,14 +16,3 @@ RUN sed -i '$d' /etc/locale.gen \
 RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-# Install packages
-RUN Rscript -e "install.packages(c('bookdown', 'formatR'), dependencies = TRUE)"
-RUN Rscript -e "install.packages(c('Cairo', 'extrafont', 'tikzDevice'), dependencies = TRUE)"
-
-USER rstudio
-
-ADD dot.latexmkrc /home/rstudio/.latexmkrc
-RUN Rscript -e "extrafont::font_import(prompt = FALSE)"
-
-USER root
-CMD ["/init"]
