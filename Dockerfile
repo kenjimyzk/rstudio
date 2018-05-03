@@ -1,7 +1,7 @@
 FROM opencpu/ubuntu-16.04
 
 RUN apt-get update && apt-get upgrade -y
-RUN  add-apt-repository -y ppa:marutter/rrutter && \
+RUN  add-apt-repository -y jonathonf/texlive-2017 && \
   apt-get update && \
   apt-get install -y texlive-full latexmk evince aspell aspell-en && \
   apt-get clean
@@ -16,3 +16,5 @@ RUN sed -i '$d' /etc/locale.gen \
 RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
+USER opencpu
+ADD dot.latexmkrc /home/rstudio/.latexmkrc
