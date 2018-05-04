@@ -1,7 +1,7 @@
 FROM opencpu/ubuntu-16.04
 
 RUN apt-get update && apt-get upgrade -y
-RUN  add-apt-repository -y jonathonf/texlive && \
+RUN  add-apt-repository -y ppa:jonathonf/texlive && \
   apt-get update && \
   apt-get install -y texlive-full latexmk evince aspell aspell-en && \
   apt-get clean
