@@ -18,3 +18,7 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 USER opencpu
 ADD dot.latexmkrc /home/rstudio/.latexmkrc
+
+USER root
+# Start non-daemonized webserver
+CMD /usr/lib/rstudio-server/bin/rserver && apachectl -DFOREGROUND
