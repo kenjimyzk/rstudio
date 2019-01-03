@@ -16,9 +16,6 @@ RUN sed -i '$d' /etc/locale.gen \
 RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-USER opencpu
-ADD dot.latexmkrc /home/opencpu/.latexmkrc
-
 USER root
 # Start non-daemonized webserver
 CMD /usr/lib/rstudio-server/bin/rserver && apachectl -DFOREGROUND
