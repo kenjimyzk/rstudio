@@ -17,7 +17,7 @@ RUN /bin/bash -c "source /etc/default/locale"
 RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 USER opencpu
-ADD dot.latexmkrc /home/rstudio/.latexmkrc
+ADD dot.latexmkrc /home/opencpu/.latexmkrc
 
 USER root
 # Start non-daemonized webserver
