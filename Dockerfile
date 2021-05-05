@@ -1,9 +1,7 @@
 FROM opencpu/ubuntu-20.04
 
 RUN apt-get update && apt-get upgrade -y
-RUN  add-apt-repository -y ppa:jonathonf/texlive-2018 && \
-  apt-get update && \
-  apt-get install -y texlive-full latexmk evince aspell aspell-en && \
+RUN apt-get install -y texlive-full latexmk evince aspell aspell-en && \
   apt-get clean
 
 # Change environment to Japanese(Character and DateTime)
